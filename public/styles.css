@@ -1,0 +1,386 @@
+:root {
+  --primary-color: #f3a91e;
+  --secondary-color: #897c70;
+  --text-dark: #8a9ea0;
+  --card-bg: #fffaf0;
+  --background-composite: #d37a15;
+  --border-radius: 12px;
+  --light-yellow: #eed7ad;
+  --btn-delete: #ff4d4d;
+  --btn-delete-hoover: #cc0000;
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+  color: var(--text-dark);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 7rem 4rem 7rem 4rem;
+  opacity: 90%;
+}
+
+p {
+  margin: 10;
+  color: var(--secondary-color);
+}
+
+.under-hr-p {
+  color: var(--card-bg);
+  font-size: large;
+}
+
+.made-by {
+  color: var(--card-bg);
+  font-size: medium;
+}
+
+.hr {
+  background-color: var(--primary-color);
+  width: 100%;
+  height: 2px;
+  border: none;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.recipe-card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease;
+  border: 2px double var(--card-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 90%;
+}
+
+.recipe-card:hover {
+  border-color: var(--background-composite);
+}
+
+.recipe-card h2 {
+  margin-top: 0;
+  color: var(-);
+}
+
+.recipe-card .btn-view {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.recipe-card .btn-view:hover {
+  background-color: var(--background-composite);
+}
+
+.form-section {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 3rem;
+  border: 1px solid var(--text-dark);
+}
+
+h3 {
+  color: var(--primary-color);
+  text-align: left;
+}
+
+.form-section h1 {
+  margin-top: 0;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.recipe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+.recipe-form input,
+.recipe-form textarea {
+  padding: 0.8rem;
+  border: 1px solid var(--light-yellow);
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+input,
+textarea {
+  color: var(--secondary-color);
+  font-size: medium;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border: 1px solid var(--primary-color);
+  background-color: #fff;
+}
+
+.recipe-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.recipe-form button {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.recipe-form button:hover {
+  background-color: var(--background-composite);
+}
+
+.recipe-detail {
+  background: var(--card-bg);
+  padding: 3rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-detail h1 {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--light-yellow);
+  padding-bottom: 1rem;
+}
+
+.section-title {
+  font-weight: bold;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+.back-link {
+  margin: 0;
+  display: inline-block;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: var(--background-composite);
+}
+
+footer {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--background-composite);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .recipe-detail {
+    padding: 1.5rem;
+  }
+  header h1 {
+    font-size: 1.8rem;
+  }
+}
+
+.recipe-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  margin-top: 2rem;
+  border-top: 1px solid var(--light-yellow);
+  padding-top: 1rem;
+}
+
+.btn-delete {
+  text-decoration: none;
+  background-color: var(--btn-delete);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+  margin-top: 1rem;
+}
+
+.btn-delete:hover {
+  background-color: var(--btn-delete-hoover);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-confirm-delete {
+  width: 100%;
+  background-color: var(--btn-delete);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-confirm-delete:hover {
+  background-color: var(--btn-delete-hoover);
+}
+
+.btn-cancel {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: #2c3e50;
+  border: 1px solid #bdc3c7;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-cancel:hover {
+  background-color: var(--background-composite);
+}
+
+/* // 404 PAGE */
+
+.error-page-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  padding: 2rem;
+}
+
+.error-content {
+  background-color: var(--card-bg);
+  padding: 4rem 2rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  max-width: 600px;
+  width: 100%;
+}
+
+.error-code {
+  color: var(--secondary-color);
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+.error-message {
+  max-width: 500px;
+  margin: 1.5rem auto;
+  color: var(--secondary-color);
+}
+
+.error-actions {
+  margin-top: 2.5rem;
+}
+
+.read-more-btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.read-more-btn:hover {
+  background-color: var(--background-composite);
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+}
+
+.btn-clear-all {
+  display: block;
+  margin-left: auto;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  width: fit-content;
+  background-color: var(--btn-delete);
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-clear-all:hover {
+  background-color: var(--btn-delete-hoover);
+}
