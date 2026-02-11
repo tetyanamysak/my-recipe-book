@@ -1,0 +1,17 @@
+<%- include("../partials/header.ejs") %>
+<main>
+  <div class="error-page-container">
+    <div class="error-content">
+      <h1 class="error-code"><%= statusCode %></h1>
+      <h2 class="error-message">
+        <%= statusCode === 404 ? "Something went wrong" : "A Kitchen Mishap" %>
+      </h2>
+      <p class="error-description"><%= message %></p>
+
+      <div class="error-actions">
+        <a href="/" class="read-more-btn">Return to Homepage</a>
+      </div>
+    </div>
+  </div>
+</main>
+<%- include("../partials/footer.ejs") %>

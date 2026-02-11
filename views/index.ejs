@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("partials/header.ejs") %>
+
+<main>
+    <section class="form-section">
+        <h1>My Recipe Book</h1>
+        <hr class="hr">
+        <h3>Add a new recipe:</h3>
+        <form action="/add-recipe" method="POST" class="recipe-form" >
+            <input id="recipeName" type="text" name="recipeName" placeholder="Name of a recipe" required>
+            <textarea id="ingredients" name="ingredients" placeholder="Ingredients" required></textarea>
+            <textarea id="instructions" name="instructions" placeholder="Instructions" required></textarea>
+            <button type="submit">Save Recipe</button>
+        </form>
+    </section>
+
+    <hr>
+
+    <div class="recipe-grid">
+        <% if (locals.recipes && recipes.length > 0) { %>
+            <% recipes.forEach(recipe => { %>
+                <div class="recipe-card">
+                    <div>
+                        <h2><%= recipe.name %></h2>
+                        <p><strong>Ingredients:</strong> <%= recipe.ingredients.substring(0, 50) %>...</p>
+                    </div>
+                    <a href="/recipe/<%= recipe.id %>" class="btn-view">Open Recipe</a>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p class="under-hr-p">You have no recipes yet.</p>
+        <% } %>
+    </div>
+
+
+<% if (locals.recipes && recipes.length > 0) { %>
+<button class="btn-clear-all btn-open-modal" data-target="clearAllModal" id="clearAllBtn">Clear All Recipes
+    </button>
+<% } %>
+
+
+
+<div id="clearAllModal" class="modal-overlay" style="display: none">
+    <div class="modal-content">
+        <div class="modal-actions">
+            <form action="/clear-all" method="POST">
+                <p>Do you really want to delete all recipes? This action cannot be undone.</p>
+                <button type="submit" class="btn-confirm-delete">Yes, delete everything!</button>
+            </form>
+            <button id="cancelClearBtn" class="btn-cancel">Cancel</button>
+        </div>
+    </div>
+</div>
+
+
+</main>
+<script src="/js/ui.js"></script>
+<%- include("partials/footer.ejs") %>
+
+
+  </body>
+</html>
