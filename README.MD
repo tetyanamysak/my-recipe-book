@@ -1,10 +1,39 @@
-My Recipe Book
+## My Recipe Book
 
 My Recipe Book is a full-stack digital culinary archive designed to help users document, organize, and preserve their favorite recipes. Built with Node.js and Express, the application focuses on a clean, user-friendly interface that mimics a warm, physical cookbook.
 
 ---
 
-Key Features
+## Screenshots
+
+- Homepage With Recipes
+  ![Homepage with Recipes](screenshots/homepage-with-recipes.png)
+
+<details>
+  <summary>Click to view more screenshots (Desktop, Mobile, Details, 404)</summary>
+
+- Desktop View
+  ![Homepage Desktop](screenshots/homepage-desktop.png)
+
+- Mobile View
+  ![Homepage Mobile](screenshots/homepage-mobile.png)
+
+- Recipe Details & Interactions
+
+#### Individual Recipe Page
+
+![Recipe Page](screenshots/recipe-page.png)
+
+- Delete Confirmation Modal
+  ![Recipe Delete Modal](screenshots/recipe-delete-modal.png)
+
+- Error Handling
+![404 Error Page](screenshots/error-404.png)
+</details>
+
+---
+
+## Key Features
 
 Dynamic Recipe Detail Pages: Uses unique identifiers (UUIDs) and Express route parameters to generate custom pages for every recipe.
 
@@ -18,7 +47,7 @@ Responsive Design: A custom CSS layout optimized for use in the kitchen, featuri
 
 ---
 
-Tech Stack
+## Tech Stack
 
 Backend: Node.js, Express.js
 
@@ -28,7 +57,7 @@ Tools: Crypto API (for UUIDs), Body-Parser, Git
 
 ---
 
-Project Structure
+## Project Structure
 
 `app.js`: Central server logic and routing.
 
@@ -52,7 +81,7 @@ Project Structure
 
 ---
 
-Setup Instructions
+## Setup Instructions
 
 Clone the repository.
 
