@@ -50,7 +50,7 @@ async function main() {
   app.get("/", (req, res) => {
     res.render("index.ejs", {
       recipes: loadRecipes(),
-      title: "My Recipe Book",
+      title: "RecipeVault",
     });
   });
 

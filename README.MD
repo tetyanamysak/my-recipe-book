@@ -1,6 +1,6 @@
-## My Recipe Book
+## RecipeVault
 
-My Recipe Book is a full-stack digital culinary archive designed to help users document, organize, and preserve their favorite recipes. Built with Node.js and Express, the application focuses on a clean, user-friendly interface that mimics a warm, physical cookbook.
+RecipeVault is a full-stack digital culinary archive designed to help users document, organize, and preserve their favorite recipes. Built with Node.js and Express, the application focuses on a clean, user-friendly interface that mimics a warm, physical cookbook.
 
 ---
 
@@ -28,6 +28,9 @@ My Recipe Book is a full-stack digital culinary archive designed to help users d
 
 - Delete Confirmation Modal
   ![Recipe Delete Modal](screenshots/recipe-delete-modal.png)
+
+- Delete All Modal
+  ![Delete All Modal](screenshots/delete-all-modal.png)
 
 - Error Handling
 ![404 Error Page](screenshots/error-404.png)
