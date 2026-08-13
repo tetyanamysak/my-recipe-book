@@ -12,11 +12,6 @@ RecipeVault is a full-stack digital culinary archive designed to help users docu
 <details>
   <summary>Click to view more screenshots (Desktop, Mobile, Details, 404)</summary>
 
-- Desktop View
-  ![Homepage Desktop](screenshots/homepage-desktop.png)
-
-- Mobile View
-  ![Homepage Mobile](screenshots/homepage-mobile.png)
 
 - Recipe Details & Interactions
 
@@ -34,6 +29,9 @@ RecipeVault is a full-stack digital culinary archive designed to help users docu
 
 - Error Handling
 ![404 Error Page](screenshots/error-404.png)
+
+- Mobile View
+  ![Homepage Mobile](screenshots/homepage-mobile.png)
 </details>
 
 ---
