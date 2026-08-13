@@ -22,7 +22,9 @@ My Recipe Book is a full-stack digital culinary archive designed to help users d
 
 #### Individual Recipe Page
 
-![Recipe Page](screenshots/recipe-page.png)
+[Edit](screenshots/edit.png)
+
+![Recipe Page](screenshots/open-recipe.png)
 
 - Delete Confirmation Modal
   ![Recipe Delete Modal](screenshots/recipe-delete-modal.png)
