@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("partials/header.ejs") %>
+
+  <main>
+    <section class="form-section">
+      <h1>Edit Recipe</h1>
+      <hr class="hr">
+
+      <form action="/recipe/<%= recipe.id %>/edit" method="POST" class="recipe-form">
+        <input
+          id="recipeName"
+          type="text"
+          name="recipeName"
+          value="<%= recipe.name %>"
+          required
+        >
+        <textarea
+          id="ingredients"
+          name="ingredients"
+          required
+        ><%= recipe.ingredients %></textarea>
+        <textarea
+          id="instructions"
+          name="instructions"
+          required
+        ><%= recipe.instructions %></textarea>
+
+        <button type="submit">Save Changes</button>
+      </form>
+
+      <a href="/recipe/<%= recipe.id %>" class="back-link">← Cancel and go back</a>
+    </section>
+  </main>
+
+  <%- include("partials/footer.ejs") %>
+</html>

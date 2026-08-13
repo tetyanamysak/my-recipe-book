@@ -177,12 +177,34 @@ textarea:focus {
 }
 
 .recipe-detail {
+  position: relative;
   background: var(--card-bg);
   padding: 3rem;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
+}
+
+.edit-icon-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.edit-icon-btn:hover {
+  background-color: var(--background-composite);
+  transform: scale(1.1);
 }
 
 .recipe-detail h1 {
@@ -378,9 +400,29 @@ footer {
   border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.2s, transform 0.1s;
+  transition:
+    background-color 0.2s,
+    transform 0.1s;
 }
 
 .btn-clear-all:hover {
   background-color: var(--btn-delete-hoover);
+}
+
+.ingredients-list {
+  padding-left: 20px;
+  margin-bottom: 20px;
+  list-style-type: disc; /* Звичайні крапочки */
+}
+.ingredients-list li {
+  margin-bottom: 6px;
+  color: #555; /* Трохи м'якший колір тексту */
+}
+.process-list {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+.process-list li {
+  line-height: 1.6;
+  color: #333;
 }

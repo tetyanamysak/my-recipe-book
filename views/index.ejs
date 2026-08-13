@@ -23,7 +23,17 @@
                 <div class="recipe-card">
                     <div>
                         <h2><%= recipe.name %></h2>
-                        <p><strong>Ingredients:</strong> <%= recipe.ingredients.substring(0, 50) %>...</p>
+                        <!-- <p><strong>Ingredients:</strong> <%= recipe.ingredients.substring(0, 50) %>...</p> -->
+
+                        <p>
+  <strong>Ingredients:</strong>
+  <% if (Array.isArray(recipe.ingredients)) { %>
+    <%= recipe.ingredients.slice(0, 3).join(', ') %>...
+  <% } else { %>
+    <%= recipe.ingredients.substring(0, 50) %>...
+  <% } %>
+</p>
+
                     </div>
                     <a href="/recipe/<%= recipe.id %>" class="btn-view">Open Recipe</a>
                 </div>

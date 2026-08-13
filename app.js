@@ -69,6 +69,44 @@ async function main() {
     }
   });
 
+  app.get("/recipe/:id/edit", (req, res) => {
+    const id = req.params.id;
+    const recipe = loadRecipes().find((r) => r.id === id);
+
+    if (recipe) {
+      res.render("edit-recipe.ejs", { recipe: recipe });
+    } else {
+      res.status(404).render("error/404.ejs", {
+        statusCode: 404,
+        message: "Recipe not found",
+        title: "404 - Not Found",
+      });
+    }
+  });
+
+  app.post("/recipe/:id/edit", (req, res) => {
+    const id = req.params.id;
+    const { recipeName, ingredients, instructions } = req.body;
+
+    const myRecipes = loadRecipes();
+    const index = myRecipes.findIndex((r) => r.id === id);
+
+    if (index === -1) {
+      return res.status(404).render("error/404.ejs", {
+        statusCode: 404,
+        message: "Recipe not found",
+        title: "404 - Not Found",
+      });
+    }
+
+    myRecipes[index].name = recipeName;
+    myRecipes[index].ingredients = ingredients;
+    myRecipes[index].instructions = instructions;
+
+    saveRecipes(myRecipes);
+    res.redirect(`/recipe/${id}`);
+  });
+
   app.post("/add-recipe", (req, res) => {
     const { recipeName, ingredients, instructions } = req.body;
     const newRecipe = {

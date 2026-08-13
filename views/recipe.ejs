@@ -5,14 +5,41 @@
   <main>
     <div class="recipe-detail">
       <div class="recipe-body">
-        <h1><%= recipe.name %></h1>
+        <a href="/recipe/<%= recipe.id %>/edit" class="edit-icon-btn" title="Edit Recipe">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 20h9"></path>
+    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+  </svg>
+</a>
 
-        <div class="section-title">Ingredients</div>
+<h1><%= recipe.name %></h1>
+
+
+        <!-- <div class="section-title">Ingredients</div>
         <p><%= recipe.ingredients %></p>
 
         <div class="section-title">Process</div>
         <p><%= recipe.instructions %></p>
-      </div>
+      </div> -->
+
+        <div class="section-title">Ingredients</div>
+<ul class="ingredients-list">
+  <% recipe.ingredients.split(/[,\r\n]+/).filter(item => item.trim().length > 0).forEach(function(item) { %>
+    <li><%= item.trim() %></li>
+  <% }); %>
+</ul>
+
+<div class="section-title">Process</div>
+<ol class="process-list">
+  <%
+
+    let steps = recipe.instructions.split(/\d+\.\s+/).map(s => s.trim()).filter(s => s.length > 0);
+    steps.forEach(function(step) {
+  %>
+    <li><%= step %></li>
+  <% }); %>
+</ol>
+
 
       <div class="recipe-footer">
         <a href="/" class="back-link">← Go back to the recipe list</a>
